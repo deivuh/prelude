@@ -1,0 +1,19 @@
+;;; -*- coding: utf-8; -*-
+;;; Automatically generated on Sun Jun  9 01:05:53 2019
+;;; Invoked by davidhsieh@Davids-MBP using 26.1.92
+(setq-default kill-ring '(#("*** TODO Setup mbsync
+*** TODO Setup M4UE
+" 0 1 (whole-line-or-region t face org-level-3 fontified nil) 1 2 (face org-level-3 fontified nil) 2 4 (face org-level-3 fontified nil) 4 8 (face org-todo fontified nil) 8 21 (face org-level-3 fontified nil) 21 22 (fontified nil) 22 23 (whole-line-or-region t face org-level-3 fontified nil) 23 24 (face org-level-3 fontified nil) 24 26 (face org-level-3 fontified nil) 26 29 (face org-todo fontified nil) 29 30 (face org-todo fontified nil) 30 41 (face org-level-3 fontified nil) 41 42 (fontified nil)) "... your code here ...
+
+(provide 'init-local)"))
+(setq-default session-file-alist '(("~/.emacs.d/custom.el" 1 nil 1 nil nil 2731 (overwrite-mode)) ("~/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org/personal.org" 2460 2512 1 nil nil 2534 (overwrite-mode))))
+(setq-default file-name-history '("~/.emacs.d/custom.el" "~/org/personal.org" "/Users/davidhsieh/org/personal.org"))
+(setq-default command-history '((package-list-packages nil) (package-refresh-contents)))
+(setq-default counsel-M-x-history '(#("package-list-packa" 0 18 (ivy-index 0)) #("package-refres" 0 14 (ivy-index 1))))
+(setq-default counsel-git-grep-cmd-history '("git --no-pager grep --full-name -n --no-color -i -I -e \"%s\""))
+(setq-default occur-collect-regexp-history '("\\1"))
+(setq-default serial-name-history '("/dev/ttys0"))
+(setq-default serial-speed-history '("9600" "1200" "2400" "4800" "14400" "19200" "28800" "38400" "57600" "115200"))
+(setq-default slime-connect-host-history '("localhost"))
+(setq-default slime-connect-port-history '("4005"))
+(setq-default smex-history '(package-list-packages package-refresh-contents cd ri 5x5 arp dbx))
