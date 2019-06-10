@@ -14,11 +14,11 @@
 (setq org-agenda-files '("~/org"))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . (:foreground "#4D9DE0" :weight bold))
-        ("DONE" . (:foreground "#75CC27" :weight bold))
-        ("DELEGATED" . (:foreground "#FF9A0C" :weight bold))
-        ("CANCELLED" . (:foreground "#775B59" :weight bold))
-        ("WAITING" . "#FF2828")))
+      '(("TODO" . (:foreground "#F46036" :weight bold))
+        ("DONE" . (:foreground "#C5D86D" :weight bold))
+        ("DELEGATED" . (:foreground "#1B998B" :weight bold))
+        ("CANCELLED" . (:foreground "#BF6571" :weight bold))
+        ("WAITING" . "#D7263D")))
 
 (setq org-todo-keywords
       '((sequence "TODO"
@@ -26,6 +26,29 @@
                   "WAITING"
                   "DELEGATED"
                   "CANCELLED")))
+
+(setq org-priority-faces '((?A . (:foreground "#FAF3DD" :weight 'bold))
+                           (?B . (:foreground "#C8D5B9"))
+                           (?C . (:foreground "#8FC0A9"))
+                           (?D . (:foreground "#68B0AB"))
+                           (?E . (:foreground "#4F7558"))))
+
+;; Setting background color
+(if (display-graphic-p)
+    (setq initial-frame-alist
+          '(
+            (tool-bar-lines . 0)
+            (width . 106)
+            (height . 60)
+            (background-color . "#2E294E")
+            (left . 50)
+            (top . 50)))
+  (setq initial-frame-alist '( (tool-bar-lines . 0))))
+
+;; Cursor color
+(set-cursor-color "#E8E8E8") 
+
+(setq default-frame-alist initial-frame-alist)
 
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (define-key global-map "\C-cc" 'org-capture)
