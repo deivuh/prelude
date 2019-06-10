@@ -17,15 +17,15 @@
       '(("TODO" . (:foreground "#F46036" :weight bold))
         ("DONE" . (:foreground "#C5D86D" :weight bold))
         ("DELEGATED" . (:foreground "#1B998B" :weight bold))
-        ("CANCELLED" . (:foreground "#BF6571" :weight bold))
+        ("CANCELED" . (:foreground "#BF6571" :weight bold))
         ("WAITING" . "#D7263D")))
 
 (setq org-todo-keywords
-      '((sequence "TODO"
-                  "DONE"
-                  "WAITING"
-                  "DELEGATED"
-                  "CANCELLED")))
+      '((sequence "TODO(t)"
+                  "DONE(d)"
+                  "WAITING(w)"
+                  "DELEGATED(g)"
+                  "CANCELED(c)")))
 
 (setq org-priority-faces '((?A . (:foreground "#FAF3DD" :weight 'bold))
                            (?B . (:foreground "#C8D5B9"))
@@ -46,7 +46,7 @@
   (setq initial-frame-alist '( (tool-bar-lines . 0))))
 
 ;; Cursor color
-(set-cursor-color "#E8E8E8") 
+(set-cursor-color "#E8E8E8")
 
 (setq default-frame-alist initial-frame-alist)
 
@@ -68,4 +68,6 @@
                          (org-agenda-files :maxlevel .2)
                          ))
 
+(load "org-habit-plus")
+(require 'org-journal)
 (provide `init-org)
