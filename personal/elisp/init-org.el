@@ -68,6 +68,13 @@
                          (org-agenda-files :maxlevel .2)
                          ))
 
+;; Fix habits on agenda, habits used to not show on timegrid.
+(setq org-agenda-sorting-strategy
+      '((agenda time-up priority-down category-keep)
+        (todo   priority-down category-keep)
+        (tags   priority-down category-keep)
+        (search category-keep)))
+
 (load "org-habit-plus")
 (require 'org-journal)
 (provide `init-org)
