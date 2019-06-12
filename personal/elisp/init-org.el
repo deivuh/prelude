@@ -75,6 +75,35 @@
         (tags   priority-down category-keep)
         (search category-keep)))
 
+;; Activate appt for notifications
+(appt-activate t)
+;; Set format. 'echo' for echo area. 'window' is another option
+(setq appt-display-format 'echo)
+
+;; Rebuild agenda from scratch
+(defun tmolnar/org-agenda-to-appt ()
+  "Rebuild all appt reminders"
+  (interactive)
+  (setq appt-time-msg-list nil)
+  (org-agenda-to-appt))
+
+;; Add to hook
+(if (string= (car (split-string org-version "\\.")) "9")
+    (add-hook 'org-agenda-mode-hook 'tmolnar/org-agenda-to-appt 'append)
+  (add-hook 'org-finalize-agenda-hook 'tmolnar/org-agenda-to-appt 'append))
+
+;; Build list of appointments on start
+(tmolnar/org-agenda-to-appt)
+
+;; Notiication duration
+(setq appt-display-duration 50)
+
+;; How long in advance to be notified
+(setq appt-message-warning-time 30)
+
+;; rebuild notifications at time
+(run-at-time "12:00" nil 'tmolnar/org-agenda-to-appt)
+
 (load "org-habit-plus")
 (require 'org-journal)
 (provide `init-org)
