@@ -104,6 +104,11 @@
 ;; rebuild notifications at time
 (run-at-time "12:00" nil 'tmolnar/org-agenda-to-appt)
 
+;; org - alert. Alternative to org-agenda-to-appt
+;; Set style
+(setq alert-default-style 'libnotify)
+
+
 (load "org-habit-plus")
 (require 'org-journal)
 (provide `init-org)
